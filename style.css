@@ -1,0 +1,713 @@
+/* =========================================================
+   STYLE.CSS - Sistem Informasi Data Mahasiswa
+   Dipakai oleh: menu_kiri, welcome, tampil, form input/edit, login
+   ========================================================= */
+
+:root {
+    --hijau: #287a48;
+    --hijau-gelap: #205f39;
+    --hijau-muda: #e8f3ec;
+    --merah: #c0392b;
+    --merah-gelap: #962d22;
+    --biru: #2563eb;
+    --teks: #263445;
+    --teks-redup: #6b7685;
+    --garis: #dfe4ea;
+    --latar: #f4f6f9;
+    --putih: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--teks);
+    background-color: var(--latar);
+}
+
+h1, h2 { color: var(--teks); }
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--garis);
+    margin: 15px 0;
+}
+
+/* =========================================================
+   SIDEBAR (menu_kiri.php)
+   ========================================================= */
+body.sidebar { padding: 20px 15px; }
+
+body.sidebar h2 {
+    text-align: center;
+    margin: 10px 0 15px;
+    letter-spacing: 1px;
+}
+
+.menu { width: 100%; }
+
+.menu a {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: var(--hijau);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 14px;
+    transition: background-color .2s, transform .1s;
+}
+
+.menu a:hover {
+    background-color: var(--hijau-gelap);
+    transform: translateY(-1px);
+}
+
+.form-bahasa label { font-size: 15px; }
+
+.form-bahasa select,
+.form-bahasa input[type="submit"] {
+    padding: 4px 6px;
+    font-size: 13px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.form-bahasa input[type="submit"]:hover { background: var(--hijau-muda); }
+
+.bawah {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+.bawah p {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    overflow-wrap: anywhere;
+}
+
+.logout {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--merah);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    transition: background-color .2s;
+}
+
+.logout:hover { background-color: var(--merah-gelap); }
+
+/* =========================================================
+   KONTEN UTAMA (welcome, tampil, form)
+   ========================================================= */
+.konten {
+    padding: 25px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.konten h1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 6px;
+    letter-spacing: .5px;
+}
+
+.konten > hr { margin: 14px 0 22px; }
+
+.kartu {
+    background: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(38, 52, 69, .06);
+}
+
+/* ---------- Beranda ---------- */
+.sambutan { text-align: center; padding: 40px 24px; }
+.sambutan p { font-size: 16px; color: var(--teks-redup); margin: 8px 0; }
+
+/* ---------- Tabel data ---------- */
+.tabel-wrap { overflow-x: auto; }
+
+table.tabel {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--putih);
+    font-size: 13px;
+}
+
+table.tabel th {
+    background: var(--hijau);
+    color: white;
+    padding: 11px 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table.tabel td {
+    padding: 10px;
+    border-bottom: 1px solid var(--garis);
+}
+
+table.tabel tbody tr:nth-child(even) { background: #f8faf9; }
+table.tabel tbody tr:hover { background: var(--hijau-muda); }
+table.tabel td.kosong { text-align: center; color: var(--teks-redup); padding: 24px; }
+
+.aksi a {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+.aksi .edit  { background: var(--biru); }
+.aksi .hapus { background: var(--merah); }
+.aksi a:hover { opacity: .85; }
+
+/* ---------- Form ---------- */
+.kartu-form { max-width: 560px; margin: 0 auto; }
+
+.baris { margin-bottom: 16px; }
+
+.baris label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.baris input[type="text"],
+.baris input[type="email"],
+.baris input[type="password"],
+.baris select,
+.baris textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--teks);
+    background: #fff;
+    border: 1px solid #c9d1da;
+    border-radius: 6px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.baris textarea { min-height: 90px; resize: vertical; }
+
+.baris input:focus,
+.baris select:focus,
+.baris textarea:focus {
+    outline: none;
+    border-color: var(--hijau);
+    box-shadow: 0 0 0 3px rgba(40, 122, 72, .15);
+}
+
+.baris input[readonly] {
+    background: #eef1f4;
+    color: var(--teks-redup);
+    cursor: not-allowed;
+}
+
+.tombol-baris {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.btn {
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: white;
+    background: var(--hijau);
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.btn:hover { background: var(--hijau-gelap); }
+.btn-reset { background: #7b8794; }
+.btn-reset:hover { background: #5f6b78; }
+
+/* ---------- Pesan ---------- */
+.pesan {
+    padding: 12px 14px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    background: #fdecea;
+    color: #8a1f14;
+    border: 1px solid #f5c2bd;
+}
+
+/* =========================================================
+   HALAMAN LOGIN
+   ========================================================= */
+body.login-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8f3ec 0%, #f4f6f9 60%);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+    background: var(--putih);
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 28px rgba(38, 52, 69, .12);
+}
+
+.login-box h1 {
+    text-align: center;
+    font-size: 22px;
+    margin: 0 0 4px;
+}
+
+.login-box .btn { width: 100%; margin-top: 4px; }
+
+/* Responsif */
+@media (max-width: 600px) {
+    .konten { padding: 16px; }
+}
+
+/* ---------- TOPBAR (topbar.php) ---------- */
+body.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+    padding: 0 24px;
+    background: var(--putih);
+    border-bottom: 1px solid var(--garis);
+    overflow: hidden;
+}
+
+.judul-app {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--hijau);
+}
+
+.form-bahasa-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.form-bahasa-top label {
+    font-size: 13px;
+    color: var(--teks-redup);
+}
+
+.form-bahasa-top select {
+    padding: 6px 10px;
+    font-size: 13px;
+    border: 1px solid #c9d1da;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.form-bahasa-top select:focus {
+    outline: none;
+    border-color: var(--hijau);
+}
+
+/* =========================================================
+   TEMA ELEGAN: NAVY + EMAS LEMBUT
+   ========================================================= */
+
+/* Ganti palet utama (nama variabel tetap, hanya warnanya) */
+:root {
+    --hijau: #1e3a5f;          /* warna utama: navy */
+    --hijau-gelap: #152b47;
+    --hijau-muda: #eef2f7;
+    --merah: #9b2c3a;          /* burgundy */
+    --merah-gelap: #7a2230;
+    --biru: #3b6ea5;
+    --teks: #1f2937;
+    --teks-redup: #6b7280;
+    --garis: #e3e7ed;
+    --latar: #f5f6f8;
+    --emas: #c9a86a;
+}
+
+/* Menu kiri */
+body.sidebar {
+    background: #1b2636;
+    min-height: 100vh;
+    border-right: 2px solid var(--emas);
+}
+
+body.sidebar h2 {
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+body.sidebar hr {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+body.sidebar .menu a {
+    background-color: rgba(255, 255, 255, .06);
+    color: #e8ecf2;
+    border-left: 3px solid transparent;
+    text-align: left;
+    padding-left: 16px;
+}
+
+body.sidebar .menu a:hover {
+    background-color: rgba(201, 168, 106, .15);
+    border-left-color: var(--emas);
+    color: #ffffff;
+    transform: none;
+}
+
+body.sidebar .bawah p {
+    color: #a8b3c4;
+}
+
+body.sidebar .bawah p b {
+    color: #ffffff;
+}
+
+/* Judul di topbar */
+.judul-app {
+    color: var(--hijau);
+}
+
+/* Garis emas tipis di bawah judul halaman */
+.konten > hr {
+    border-top: 2px solid var(--emas);
+    width: 80px;
+    margin: 14px auto 22px;
+}
+
+/* Fokus input pakai warna navy */
+.baris input:focus,
+.baris select:focus,
+.baris textarea:focus {
+    border-color: var(--hijau);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, .15);
+}
+
+/* Baris tabel */
+table.tabel tbody tr:nth-child(even) {
+    background: #f8f9fb;
+}
+
+/* Halaman login */
+body.login-body {
+    background: linear-gradient(135deg, #1b2636 0%, #2c3e5a 100%);
+}
+
+.login-box h1 {
+    color: var(--hijau);
+}
+
+/* =========================================================
+   TOMBOL EDIT & HAPUS (gaya outline elegan)
+   ========================================================= */
+.aksi {
+    white-space: nowrap;
+}
+
+.aksi a {
+    display: inline-block;
+    padding: 5px 14px;
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 4px;
+    transition: background-color .2s, color .2s, border-color .2s;
+}
+
+.aksi a:last-child {
+    margin-right: 0;
+}
+
+/* Edit: navy */
+.aksi .edit {
+    color: var(--hijau);
+    border-color: #b8c4d6;
+}
+
+.aksi .edit:hover {
+    background: var(--hijau);
+    border-color: var(--hijau);
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Tombol Hapus (warna langsung, selector kuat) */
+td.aksi a.hapus {
+    color: #9b2c3a;
+    background: transparent;
+    border: 1px solid #dfb9bf;
+}
+
+td.aksi a.hapus:hover {
+    color: #ffffff;
+    background: #9b2c3a;
+    border-color: #9b2c3a;
+}
+
+/* Sekalian untuk Edit, supaya aman */
+td.aksi a.edit {
+    color: #1e3a5f;
+    background: transparent;
+    border: 1px solid #b8c4d6;
+}
+
+td.aksi a.edit:hover {
+    color: #ffffff;
+    background: #1e3a5f;
+    border-color: #1e3a5f;
+}
+
+/* ---------- MENU AKTIF ---------- */
+body.sidebar .menu a.aktif {
+    background-color: rgba(201, 168, 106, .18);
+    border-left-color: var(--emas);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* ---------- CATATAN FORM ---------- */
+.catatan-form {
+    font-size: 13px;
+    color: var(--teks-redup);
+    background: #f8f9fb;
+    border-left: 3px solid var(--emas);
+    padding: 9px 12px;
+    margin: 0 0 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ---------- PLACEHOLDER ---------- */
+.baris input::placeholder,
+.baris textarea::placeholder {
+    color: #a3acb9;
+    font-style: italic;
+    opacity: 1;
+}
+
+/* ---------- RADIO BUTTON ---------- */
+.radio-group {
+    display: flex;
+    gap: 12px;
+}
+
+.baris label.radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    margin: 0;
+    padding: 10px 14px;
+    font-weight: 500;
+    border: 1px solid #c9d1da;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s;
+}
+
+.baris label.radio:hover {
+    border-color: var(--hijau);
+}
+
+.baris label.radio input {
+    width: auto;
+    margin: 0;
+    accent-color: var(--hijau);
+}
+
+/* Pilihan yang sedang dipilih */
+.baris label.radio:has(input:checked) {
+    border-color: var(--hijau);
+    background: var(--hijau-muda);
+    color: var(--hijau);
+    font-weight: 600;
+}
+
+/* ---------- PENCARIAN & TOMBOL TAMBAH ---------- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.form-cari {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.form-cari input[type="text"] {
+    width: 280px;
+    max-width: 100%;
+    padding: 9px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #c9d1da;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.form-cari input[type="text"]:focus {
+    outline: none;
+    border-color: var(--hijau);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, .15);
+}
+
+.form-cari .btn { padding: 9px 18px; }
+
+.link-reset {
+    font-size: 13px;
+    color: var(--teks-redup);
+    text-decoration: none;
+}
+.link-reset:hover { color: var(--merah); }
+
+.btn-tambah {
+    text-decoration: none;
+    background: var(--hijau);
+    white-space: nowrap;
+}
+
+/* ---------- BERANDA ---------- */
+.sapaan {
+    text-align: center;
+    color: var(--teks-redup);
+    font-size: 15px;
+    margin: 0 0 22px;
+}
+
+.sapaan strong { color: var(--teks); }
+
+.statistik {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: var(--putih);
+    border: 1px solid var(--garis);
+    border-top: 3px solid var(--emas);
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(38, 52, 69, .06);
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--teks-redup);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.stat-angka {
+    display: block;
+    margin-top: 6px;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--hijau);
+}
+
+.beranda-bawah {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+}
+
+.judul-kartu {
+    margin: 0 0 16px;
+    font-size: 15px;
+    color: var(--teks);
+}
+
+.bar-item { margin-bottom: 14px; }
+
+.bar-teks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.bar-latar {
+    height: 8px;
+    background: #eceff3;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-isi {
+    height: 100%;
+    background: var(--hijau);
+    border-radius: 4px;
+}
+
+.kosong-teks { color: var(--teks-redup); font-size: 13px; }
+
+.pintasan {
+    display: block;
+    padding: 11px 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--hijau);
+    text-decoration: none;
+    border: 1px solid #b8c4d6;
+    border-radius: 6px;
+    transition: background-color .2s, color .2s;
+}
+
+.pintasan:hover {
+    background: var(--hijau);
+    border-color: var(--hijau);
+    color: #fff;
+}
+
+/* Layar sempit */
+@media (max-width: 800px) {
+    .statistik { grid-template-columns: repeat(2, 1fr); }
+    .beranda-bawah { grid-template-columns: 1fr; }
+}

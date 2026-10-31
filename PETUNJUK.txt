@@ -1,0 +1,31 @@
+SISTEM INFORMASI MANAJEMEN DATA MAHASISWA - PHP DASAR
+
+FOLDER:
+Simpan semua file ke:
+C:\xampp\htdocs\Tugas_PenerapanTeknologiInternet
+
+LANGKAH:
+1. Jalankan Apache dan MySQL dari XAMPP.
+2. Buka http://localhost/phpmyadmin
+3. Pilih menu Import dan impor file database.sql, atau buka tab SQL lalu jalankan isinya.
+4. Buka http://localhost/Tugas_PenerapanTeknologiInternet/setup_admin.php
+5. Jika muncul akun berhasil dibuat, hapus file setup_admin.php dari folder project.
+6. Buka http://localhost/Tugas_PenerapanTeknologiInternet/
+
+LOGIN:
+Username: admin
+Password: admin123
+
+FITUR:
+- Login/logout menggunakan session
+- Input data mahasiswa dan validasi
+- Tampil data mahasiswa
+- Edit dan hapus data
+- Pilihan bahasa Indonesia/English menggunakan session
+- Prepared statement untuk query input, update, delete, dan login
+- htmlspecialchars untuk mengamankan output teks
+
+CATATAN:
+- Pengaturan koneksi default: localhost, user root, password kosong, database db_mahasiswa.
+- Sesuaikan koneksi.php jika konfigurasi MySQL kamu berbeda.
+- Untuk kebutuhan tugas kelas, akun admin dibuat melalui setup_admin.php. Hapus file itu setelah akun berhasil dibuat.

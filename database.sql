@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS db_mahasiswa;
+USE db_mahasiswa;
+
+CREATE TABLE IF NOT EXISTS mahasiswa (
+    nim VARCHAR(20) PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    prodi VARCHAR(100) NOT NULL,
+    fakultas VARCHAR(100) NOT NULL,
+    jenis_kelamin VARCHAR(20) NOT NULL,
+    alamat TEXT NOT NULL,
+    no_hp VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
