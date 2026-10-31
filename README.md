@@ -3,7 +3,6 @@ Sistem Informasi Manajemen Data Mahasiswa berbasis PHP dan MySQL: CRUD, login se
 
 Aplikasi web sederhana untuk mengelola data mahasiswa (tambah, tampil, ubah, hapus). Dibuat dengan PHP murni dan MySQL sebagai tugas mata kuliah **Penerapan Teknologi Internet**.
 
-## Identitas
 
 | | |
 |---|---|
