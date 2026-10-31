@@ -1,7 +1,6 @@
 # Sistem_Informasi_Data_Mahasiswa
 Sistem Informasi Manajemen Data Mahasiswa berbasis PHP dan MySQL: CRUD, login session, dan dua bahasa (ID/EN).
 
-# Sistem Informasi Manajemen Data Mahasiswa
 Aplikasi web sederhana untuk mengelola data mahasiswa (tambah, tampil, ubah, hapus). Dibuat dengan PHP murni dan MySQL sebagai tugas mata kuliah **Penerapan Teknologi Internet**.
 
 ## Identitas
